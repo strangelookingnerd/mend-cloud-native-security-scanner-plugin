@@ -15,7 +15,7 @@
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <licenses>
         <license>
-            <name>The Apache Software License, Version 2.0</name>
+            <name>Apache License, Version 2.0</name>
             <url>https://opensource.org/license/apache-2-0/</url>
         </license>
     </licenses>
