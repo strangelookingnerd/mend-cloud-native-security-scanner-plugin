@@ -21,7 +21,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/mend-cloud-native-plugin.git</connection>
+        <connection>scm:git:https://github.com/jenkinsci/mend-cloud-native-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/jenkinsci/mend-cloud-native-plugin.git</developerConnection>
         <url>http://github.com/jenkinsci/mend-cloud-native-plugin</url>
         <tag>HEAD</tag>

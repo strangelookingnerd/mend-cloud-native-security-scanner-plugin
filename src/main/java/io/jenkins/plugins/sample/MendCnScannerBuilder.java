@@ -25,12 +25,14 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
 
     private final String userEmail;
     private final Secret userKey;
+    private final String mendUrl;
     private final String repoNames;
 
     @DataBoundConstructor
-    public MendCnScannerBuilder(String userEmail, Secret userKey , String repoNames) {
+    public MendCnScannerBuilder(String userEmail, Secret userKey , String mendUrl, String repoNames) {
         this.userEmail = userEmail;
         this.userKey = userKey;
+        this.mendUrl = mendUrl;
         this.repoNames = repoNames;
     }
 
@@ -40,6 +42,10 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
 
     public Secret getUserKey() {
         return userKey;
+    }
+
+    public String getMendUrl() {
+        return mendUrl;
     }
 
     public String getRepoNames() {
@@ -70,10 +76,9 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
     }
 
     private void setScannerEnvVariables(EnvVars env) {
-        env.put("MEND_ENVS_JSON", "https://ws-cli.s3.amazonaws.com/dev-envs.json");
-        env.put("MEND_URL", "https://dev.whitesourcesoftware.com");
         env.put("MEND_EMAIL", userEmail);
         env.put("MEND_USER_KEY", userKey.getPlainText());
+        env.put("MEND_URL", mendUrl);
     }
 
     private void downloadScanner(PrintStream logger) throws IOException {
