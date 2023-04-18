@@ -19,6 +19,14 @@
             <url>https://opensource.org/license/apache-2-0/</url>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/jenkinsci/mend-cloud-native-plugin.git</connection>
+        <developerConnection>scm:git:https://github.com/jenkinsci/mend-cloud-native-plugin.git</developerConnection>
+        <url>http://github.com/jenkinsci/mend-cloud-native-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <revision>1.0</revision>
         <changelist>-SNAPSHOT</changelist>
