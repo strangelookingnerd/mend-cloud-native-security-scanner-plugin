@@ -13,6 +13,7 @@ Scanner requires 4 variables to be configured:
  Repositories - list of image repositories to scan from (separated by comma)
  ```
 
+##
 
 This plugin is defined to be run (as a build step) after a new image creation on the jenkins machine:
 According to the given repositories, for each repository the latest created image will be scanned and a summary table will be displayed. 
