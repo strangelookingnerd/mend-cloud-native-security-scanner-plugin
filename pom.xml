@@ -23,7 +23,7 @@
     <scm>
         <connection>scm:git:https://github.com/jenkinsci/mend-cloud-native-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/jenkinsci/mend-cloud-native-plugin.git</developerConnection>
-        <url>http://github.com/jenkinsci/mend-cloud-native-plugin</url>
+        <url>https://github.com/jenkinsci/mend-cloud-native-plugin</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -57,44 +57,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>structs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-cps</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-job</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-basic-steps</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-durable-task-step</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.main</groupId>
-            <artifactId>jenkins-test-harness-htmlunit</artifactId>
-            <version>127.v28144890db_46</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-step-api</artifactId>
-            <version>639.v6eca_cd8c04a_a_</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 
     <repositories>
         <repository>

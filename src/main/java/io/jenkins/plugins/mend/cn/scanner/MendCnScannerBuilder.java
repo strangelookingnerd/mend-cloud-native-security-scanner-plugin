@@ -1,4 +1,4 @@
-package io.jenkins.plugins.sample;
+package io.jenkins.plugins.mend.cn.scanner;
 
 import hudson.EnvVars;
 import hudson.Extension;
@@ -18,7 +18,9 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.net.URL;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 
 public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
@@ -60,17 +62,18 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
         setScannerEnvVariables(env);
 
         // download CLI
-        downloadScanner(listener.getLogger());
+        if (downloadScanner(listener.getLogger())) {
 
-        for (String repoName : repoNames.split(",")) {
-            listener.getLogger().println("Processing repository: " + repoName);
-            // find recent image to scan
-            String tag = extractImageTag(launcher, env, listener, run.getRootDir(), repoName);
-            if (tag != null) {
-                // run CLI scan
-                String scanTag = repoName + ":" + tag;
-                listener.getLogger().println("Performing Mend image scan for tag: " + scanTag);
-                executeCommand(launcher, env, listener, null, "mend", "image", scanTag, "--no-color");
+            for (String repoName : repoNames.split(",")) {
+                listener.getLogger().println("Processing repository: " + repoName);
+                // find recent image to scan
+                String tag = extractImageTag(launcher, env, listener, run.getRootDir(), repoName);
+                if (tag != null) {
+                    // run CLI scan
+                    String scanTag = repoName + ":" + tag;
+                    listener.getLogger().println("Performing Mend image scan for tag: " + scanTag);
+                    executeCommand(launcher, env, listener, null, "mend", "image", scanTag, "--no-color");
+                }
             }
         }
     }
@@ -81,7 +84,7 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
         env.put("MEND_URL", mendUrl);
     }
 
-    private void downloadScanner(PrintStream logger) throws IOException {
+    private boolean downloadScanner(PrintStream logger) {
 
         String scannerDownloadUrl = createDownloadUrl();
 
@@ -89,7 +92,17 @@ public class MendCnScannerBuilder extends Builder implements SimpleBuildStep {
         File scannerFile = new File(FilenameUtils.getName(scannerDownloadUrl));
         // grant executable permission
         scannerFile.setExecutable(true);
-        FileUtils.copyURLToFile(new URL(scannerDownloadUrl), scannerFile);
+
+        try {
+            URI uri = new URI(scannerDownloadUrl);
+            FileUtils.copyURLToFile(uri.toURL(), scannerFile);
+            return true;
+        } catch (URISyntaxException | MalformedURLException e) {
+            logger.println("Failed to create URI");
+        } catch (IOException e) {
+            logger.println("Failed to download CLI");
+        }
+        return false;
     }
 
     private String extractImageTag(Launcher launcher, EnvVars env, TaskListener listener, File dir, String repoName) throws IOException, InterruptedException {
