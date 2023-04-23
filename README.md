@@ -6,10 +6,12 @@ This plugin downloads Mend.io Scanner CLI and performs image scan to detect vuln
 ## Plugin Prerequisites ##
 
 Scanner requires 4 variables to be configured:
- ```User Email - mend email```
- ```User Key -  mend user key```
- ```Mend URL - mend application environment```
- ```Repositories - list of image repositories to scan from (separated by comma)```
+ ```
+ User Email - mend email
+ User Key -  mend user key
+ Mend URL - mend application environment
+ Repositories - list of image repositories to scan from (separated by comma)
+ ```
 
 
 This plugin is defined to be run (as a build step) after a new image creation on the jenkins machine:
