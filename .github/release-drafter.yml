@@ -1,2 +1,5 @@
 _extends: .github
 tag-template: mend-cloud-native-plugin-$NEXT_MINOR_VERSION
+template:
+  ## What’s Changed
+  $CHANGES
