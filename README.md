@@ -15,9 +15,9 @@ Scanner requires 4 variables to be configured:
 
 ##
 
-This plugin is defined to be run (as a build step) after a new image creation on the jenkins machine:
+This plugin is defined to be run (as a build step) after a new image creation on the jenkins machine:   
 According to the given repositories, for each repository the latest created image will be scanned and a summary table will be displayed. 
-This table consists of vulnerabilities data with their risk and fix version (if exists). 
+This table consists of vulnerabilities data with their risk and fix version (if exists).     
 Also, other security risks, such as secrets detection will be presented.
 
 * The plugin assumed the local latest image was created and still exists on the jenkins machine.
