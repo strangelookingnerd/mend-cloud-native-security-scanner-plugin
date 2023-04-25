@@ -23,3 +23,10 @@ Also, other security risks, such as secrets detection will be presented.
 * The plugin assumed the local latest image was created and still exists on the jenkins machine.
 * The plugin download a dedicated scanner CLI according to the OS and the machine architecture
 
+
+
+<!-- PROJECT LOGO -->
+
+[![Logo][company-logo]](https://www.mend.io/)
+
+[company-logo]: images/mend.png
