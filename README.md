@@ -26,7 +26,8 @@ Also, other security risks, such as secrets detection will be presented.
 
 
 <!-- PROJECT LOGO -->
-
-[![Logo][company-logo]](https://www.mend.io/)
-
-[company-logo]: images/mend.png
+<br />
+<p align="center">
+  <a href="https://www.mend.io/">
+    <img src="https://github.com/jenkinsci/mend-cloud-native-security-scanner-plugin/blob/master/images/mend.png" alt="Logo">
+  </a>
