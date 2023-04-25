@@ -8,7 +8,7 @@
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
-    <artifactId>mend-cloud-native-plugin</artifactId>
+    <artifactId>mend-cloud-native</artifactId>
     <version>${revision}${changelist}</version>
     <packaging>hpi</packaging>
     <name>Mend Cloud Native Plugin</name>
