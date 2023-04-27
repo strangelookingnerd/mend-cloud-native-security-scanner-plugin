@@ -1,8 +1,6 @@
-# Mend Cloud Native Security Scanner #
+# Mend Cloud Native Security Scanner
 
 <img src="images/mend-new.png">
-
-This plugin downloads Mend.io Scanner CLI and performs image scan to detect vulnerabilities and other security risks. 
 
 
 [![Build Status](https://ci.jenkins.io/job/Plugins/job/mend-cloud-native-security-scanner-plugin/job/master/badge/icon)](https://ci.jenkins.io/job/Plugins/job/mend-cloud-native-security-scanner-plugin/job/master/)
@@ -11,8 +9,12 @@ This plugin downloads Mend.io Scanner CLI and performs image scan to detect vuln
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/mend-cloud-native-security-scanner-plugin.svg?label=changelog)](https://github.com/jenkinsci/mend-cloud-native-security-scanner-plugin/releases/latest)
 [![Jenkins Plugin Installs](https://img.shields.io/jenkins/plugin/i/mend-cloud-native-security-scanner.svg?color=blue)](https://plugins.jenkins.io/mend-cloud-native-security-scanner)
 
+## Introduction
+This plugin downloads Mend.io Scanner CLI and performs image scan to detect vulnerabilities and other security risks.
 
-## Plugin Prerequisites ##
+
+
+## Initial Configuration
 
 Scanner requires 4 variables to be configured:
  ```
