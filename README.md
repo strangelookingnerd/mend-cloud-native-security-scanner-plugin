@@ -1,6 +1,6 @@
 # Mend Cloud Native Security Scanner #
 
-<img src="images/mend-new.png" width="192">
+<img src="images/mend-new.png">
 
 This plugin downloads Mend.io Scanner CLI and performs image scan to detect vulnerabilities and other security risks. 
 
